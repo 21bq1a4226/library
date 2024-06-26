@@ -12,7 +12,8 @@ class Author(models.Model):
 class Book(models.Model):
     name=models.CharField(max_length=350)
     author=models.ForeignKey(Author,on_delete=models.CASCADE)
-    image=models.ImageField()
+    pdf = models.FileField(upload_to='pdfs/')
+    
     category=models.CharField(max_length=220)
 
     def __str__(self):

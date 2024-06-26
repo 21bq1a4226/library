@@ -55,7 +55,7 @@ def addbook(request):
         name=request.POST['name']
         category=request.POST['category']
         author=Author.objects.get(id=request.POST['author'])
-        image=request.FILES['book-image']
+        image=request.FILES['book-pdf']
         if author is not None or author != '':
             newbook,created=Book.objects.get_or_create(name=name,image=image,category=category,author=author)
             messages.success(request,'Book - {} Added succesfully '.format(newbook.name))
